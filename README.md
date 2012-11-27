@@ -2,6 +2,7 @@
 
 Distilling the game of life to perfection. My first clojure project.
 
+
 # Usage
 
     Switches           Default  Desc
@@ -11,15 +12,20 @@ Distilling the game of life to perfection. My first clojure project.
     -g, --generations  1000     Number of generations to simulate
     -p, --print        false    Display the game output
 
-Run 1000 generations in a 100x100 grid using v3 algorithm
-
-    lein run -v 3 -s 100 -p
-
 Available algorithm versions
 
     1 - 2d vector, all calculations done on the fly
     2 - 1d vector, all calculations done on the fly
     3 - 1d vector with precomputed neighbor map
+
+Run 1000 generations in a 100x100 grid using v3 algorithm
+
+    lein run -v 3 -s 100 -p
+
+Print to terminal (needs tweaking)
+
+    lein run -v3 -s 20 -p text
+
 
 ## License
 
