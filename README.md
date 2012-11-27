@@ -14,9 +14,9 @@ Distilling the game of life to perfection. My first clojure project.
 
 Available algorithm versions
 
-    1 - 2d vector, all calculations done on the fly
-    2 - 1d vector, all calculations done on the fly
-    3 - 1d vector with precomputed neighbor map
+    1 - 2d vector, all calculations done on the fly (45ms / 100)
+    2 - 1d vector, all calculations done on the fly (15ms / 100)
+    3 - 1d vector with precomputed neighbor map     (5ms  / 100)
 
 Run 1000 generations of a random 50 x 50 grid using v1 (headless) 
   

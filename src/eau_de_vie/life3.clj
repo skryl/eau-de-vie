@@ -2,7 +2,7 @@
 (refer 'eau-de-vie.core)
 
 (declare 
-  life next-grid alive-neighbors
+  life next-grid count-live-neighbors
   build-neighbor-map find-neighbor-indices
   transform-coord-pair normalize-coord)    
 
@@ -11,13 +11,13 @@
 (defn life [size generations]
   (let [grid      (gen-grid size)
         neighbors (build-neighbor-map grid size)]
-    (bench generations next-grid grid neighbors size)))
+    (bench generations next-grid grid size neighbors)))
 
-(defn next-grid [grid neighbors size]
+(defn next-grid [grid size neighbors]
   (print-grid grid size)
-  (vec (map-indexed #(get-in transition-map [%2 (alive-neighbors grid neighbors %1)]) grid)))
+  (vec (map-indexed #(get-in transition-map [%2 (count-live-neighbors grid neighbors %1)]) grid)))
 
-(defn alive-neighbors [grid neighbors idx] 
+(defn count-live-neighbors [grid neighbors idx] 
   (reduce #(+ %1 (nth grid %2)) 0 (get neighbors idx))) 
 
 
