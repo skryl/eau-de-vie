@@ -18,13 +18,17 @@ Available algorithm versions
     2 - 1d vector, all calculations done on the fly
     3 - 1d vector with precomputed neighbor map
 
-Run 1000 generations in a 100x100 grid using v3 algorithm
+Run 1000 generations of a random 50 x 50 grid using v1 (headless) 
+  
+    lein run -v 1
 
-    lein run -v 3 -s 100 -p
+Run 1000 generations of a random 50 x 50 grid using v2 and print to swing window
 
-Print to terminal (needs tweaking)
+    lein run -v 2 -p
 
-    lein run -v3 -s 20 -p text
+Run 100 generations of a random 20 x 20 grid using v3 and print to terminal
+
+    lein run -v3 -s 20 -g 100 -p text
 
 
 ## License
