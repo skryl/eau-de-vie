@@ -14,7 +14,7 @@
                 ["-v" "--version" "Version of life to run"]
                 ["-s" "--size" "Size of grid to use" :default 50]
                 ["-g" "--generations" "Number of generations to simulate" :default 1000]
-                ["-p" "--print" "How to display the grid output" :default false])]
+                ["-p" "--print" "Display the game output" :default false])]
     (case (get opts :print) 
       false  (init-no-screen)
       "text" (init-text-screen)
