@@ -1,6 +1,21 @@
 # Life, distilled.
 
-Distilling the game of life to perfection. First clojure project.
+Distilling the game of life to perfection. My first clojure project.
+
+# Usage
+
+    Switches           Default  Desc
+    --------           -------  ----
+    -v, --version               Version of life to run
+    -s, --size         50       Size of grid to use
+    -g, --generations  1000     Number of generations to simulate
+    -p, --print        false    Display the game output
+
+Available algorithm versions
+
+    1 - 2d vector, all calculations done on the fly
+    2 - 1d vector, all calculations done on the fly
+    3 - 1d vector with precomputed neighbor map
 
 ## License
 
