@@ -16,7 +16,7 @@
         update-point #(let [ncount (count-neighbors grid %2) 
                             alive (= 1 (get-in grid %2))]
                         (assoc-in % %2 (next-state alive ncount))) ]
-    ; (print-grid-2d grid)
+    (print-grid (flatten grid) size)
     (reduce update-point grid points)))
 
 ; (defn count-neighbors [grid yx]

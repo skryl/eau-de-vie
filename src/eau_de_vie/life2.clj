@@ -7,7 +7,7 @@
   (bench generations next-grid (gen-grid size) size))
 
 (defn next-grid [grid size]
-  ; (print-grid grid size)
+  (print-grid grid size)
   ; (map-indexed #(get-in transition-map [%2 (alive-neighbors grid size %1)]) grid)) ; <-- oops 30x slowdown
   (vec (map-indexed #(get-in transition-map [%2 (alive-neighbors grid size %1)]) grid)))
 

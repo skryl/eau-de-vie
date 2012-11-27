@@ -1,4 +1,5 @@
-(ns eau-de-vie.core)
+(ns eau-de-vie.core
+  (:require [clojure.tools.cli :as c])) 
 
 (load "constants")
 (load "bench")
@@ -8,8 +9,21 @@
 (load "life2")
 (load "life3")
 
-(defn -main
-  "I play life. Just tell me what version to run, how big to make it, and how many times to run it."
-  [ver size generations]
-  (printf "Life version %s runs at %s ms per frame\n" ver
-    ((resolve (symbol (str "eau-de-vie.life" ver "/life"))) (Integer. size) (Integer. generations))) )
+(defn -main [& args]
+  (let [[opts args banner] (c/cli args
+                ["-v" "--version" "Version of life to run"]
+                ["-s" "--size" "Size of grid to use" :default 50]
+                ["-g" "--generations" "Number of generations to simulate" :default 1000]
+                ["-p" "--print" "How to display the grid output" :default false])]
+    (case (get opts :print) 
+      false  (init-no-screen)
+      "text" (init-text-screen)
+             (init-swing-screen)) 
+    (if (get opts :version)
+      (do 
+        (printf "Life version %s ran at %s ms per frame\n" (get opts :version)
+          ((resolve (symbol (str "eau-de-vie.life" (get opts :version) "/life"))) 
+                                                   (Integer. (get opts :size))  
+                                                   (Integer. (get opts :generations))))
+        (cleanup-screen))
+      (println banner))))

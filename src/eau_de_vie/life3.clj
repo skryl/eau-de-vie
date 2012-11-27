@@ -14,7 +14,7 @@
     (bench generations next-grid grid neighbors size)))
 
 (defn next-grid [grid neighbors size]
-  ; (print-grid grid size)
+  (print-grid grid size)
   (vec (map-indexed #(get-in transition-map [%2 (alive-neighbors grid neighbors %1)]) grid)))
 
 (defn alive-neighbors [grid neighbors idx] 
