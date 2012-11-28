@@ -14,29 +14,29 @@ Distilling the game of life to perfection. My first clojure project.
 
 ## Algorithms
 
-###Version 1 - 2d vector, all calculations done on the fly
-- Complexity:  O(n), n = grid size
-- Benchmark:   45ms / 100 
+    Version 1 - 2d vector, all calculations done on the fly
+    - Complexity:  O(n), n = grid size
+    - Benchmark:   45ms / 100 
 
-###Version 2 - 1d vector, all calculations done on the fly
-- Complexity:  O(n), n = grid size
-- Benchmark:   15ms / 100 
+    Version 2 - 1d vector, all calculations done on the fly
+    - Complexity:  O(n), n = grid size
+    - Benchmark:   15ms / 100 
 
-###Version 3 - 1d vector with precomputed neighbor coordinates
-- Complexity:  O(n), n = grid size
-- Benchmark:   5ms / 100 
+    Version 3 - 1d vector with precomputed neighbor coordinates
+    - Complexity:  O(n), n = grid size
+    - Benchmark:   5ms / 100 
 
-###Version 4 - sparse grid, all calculations done on the fly
-- Complexity:  O(n), n = # live cells
-- Benchmark:   0 ~ 5ms / 100 
+    Version 4 - sparse grid, all calculations done on the fly
+    - Complexity:  O(n), n = number of live cells
+    - Benchmark:   0 ~ 5ms / 100 
 
-###Version 5 - sparse grid with cached neighbor coordinates (incomplete)
-- Complexity:  O(n), n = # live cells
-- Benchmark:   ?
+    Version 5 - sparse grid with cached neighbor coordinates (incomplete)
+    - Complexity:  O(n), n = number of live cells
+    - Benchmark:   ?
 
-###Version 6 - hashlife variation (incomplete)
-- Complexity:  O(log(n)), n = grid size
-- Benchmark:   ?
+    Version 6 - hashlife variation (incomplete)
+    - Complexity:  ?
+    - Benchmark:   ?
 
 # Examples
 
@@ -50,7 +50,7 @@ Run 1000 generations of a random 50 x 50 grid using v2 and print to swing window
 
 Run 100 generations of a random 20 x 20 grid using v3 and print to terminal
 
-    lein run -v3 -s 20 -g 100 -p text
+    lein run -v 3 -s 20 -g 100 -p text
 
 
 ## License
