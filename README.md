@@ -15,34 +15,34 @@ Distilling the game of life to perfection. My first clojure project.
 ## Algorithm Versions
 
 ###Version 1
-Description: 2d vector, all calculations done on the fly
-Complexity:  O(n), n = grid size
-Benchmark:   45ms / 100 
+- Description: 2d vector, all calculations done on the fly
+- Complexity:  O(n), n = grid size
+- Benchmark:   45ms / 100 
 
 ###Version 2
-Description: 1d vector, all calculations done on the fly
-Complexity:  O(n), n = grid size
-Benchmark:   15ms / 100 
+- Description: 1d vector, all calculations done on the fly
+- Complexity:  O(n), n = grid size
+- Benchmark:   15ms / 100 
 
 ###Version 3
-Description: 1d vector with precomputed neighbor coordinates
-Complexity:  O(n), n = grid size
-Benchmark:   5ms / 100 
+- Description: 1d vector with precomputed neighbor coordinates
+- Complexity:  O(n), n = grid size
+- Benchmark:   5ms / 100 
 
 ###Version 4
-Description: sparse grid, all calculations done on the fly
-Complexity:  O(n), n = # live cells
-Benchmark:   0 ~ 5ms / 100 
+- Description: sparse grid, all calculations done on the fly
+- Complexity:  O(n), n = # live cells
+- Benchmark:   0 ~ 5ms / 100 
 
 ###Version 5 (incomplete)
-Description: sparse grid with cached neighbor coordinates
-Complexity:  O(n), n = # live cells
-Benchmark:   ?
+- Description: sparse grid with cached neighbor coordinates
+- Complexity:  O(n), n = # live cells
+- Benchmark:   ?
 
 ###Version 6 (incomplete)
-Description: hashlife variation
-Complexity:  O(log(n)), n = grid size
-Benchmark:   ?
+- Description: hashlife variation
+- Complexity:  O(log(n)), n = grid size
+- Benchmark:   ?
 
 # Examples
 
