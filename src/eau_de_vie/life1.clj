@@ -1,15 +1,15 @@
 (ns eau-de-vie.life1)
 (refer 'eau-de-vie.core)
 
-(declare life next-grid count-live-neighbors)
+(declare life step count-live-neighbors)
 
 (defn life [size generations]
-  (let [grid (randvec-2d size)
+  (let [grid (gen-2d-grid size)
         size-rng (range size)
         grid-coords (for [x size-rng y size-rng] [y x])]
-    (bench generations next-grid grid size grid-coords)))
+    (bench generations step grid size grid-coords)))
 
-(defn next-grid [grid size grid-coords] 
+(defn step [grid size grid-coords] 
   (let [update-cell (fn [grid cell-coords] (assoc-in grid cell-coords 
                        (get-in transition-map 
                          [(get-in grid cell-coords) (count-live-neighbors grid size cell-coords)] )))] 

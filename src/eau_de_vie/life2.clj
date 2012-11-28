@@ -1,12 +1,12 @@
 (ns eau-de-vie.life2)
 (refer 'eau-de-vie.core)
 
-(declare life next-grid count-live-neighbors)
+(declare life step count-live-neighbors)
 
 (defn life [size generations]
-  (bench generations next-grid (gen-grid size) size))
+  (bench generations step (gen-1d-grid size) size))
 
-(defn next-grid [grid size]
+(defn step [grid size]
   (print-grid grid size)
   (vec (map-indexed #(get-in transition-map [%2 (count-live-neighbors grid size %1)]) grid)))
 

@@ -12,11 +12,39 @@ Distilling the game of life to perfection. My first clojure project.
     -g, --generations  1000     Number of generations to simulate
     -p, --print        false    Display the game output
 
-Available algorithm versions
+## Algorithm Versions
 
-    1 - 2d vector, all calculations done on the fly (45ms / 100)
-    2 - 1d vector, all calculations done on the fly (15ms / 100)
-    3 - 1d vector with precomputed neighbor map     (5ms  / 100)
+###Version 1
+Description: 2d vector, all calculations done on the fly
+Complexity:  O(n), n = grid size
+Benchmark:   45ms / 100 
+
+###Version 2
+Description: 1d vector, all calculations done on the fly
+Complexity:  O(n), n = grid size
+Benchmark:   15ms / 100 
+
+###Version 3
+Description: 1d vector with precomputed neighbor coordinates
+Complexity:  O(n), n = grid size
+Benchmark:   5ms / 100 
+
+###Version 4
+Description: sparse grid, all calculations done on the fly
+Complexity:  O(n), n = # live cells
+Benchmark:   0 ~ 5ms / 100 
+
+###Version 5 (incomplete)
+Description: sparse grid with cached neighbor coordinates
+Complexity:  O(n), n = # live cells
+Benchmark:   ?
+
+###Version 6 (incomplete)
+Description: hashlife variation
+Complexity:  O(log(n)), n = grid size
+Benchmark:   ?
+
+# Examples
 
 Run 1000 generations of a random 50 x 50 grid using v1 (headless) 
   

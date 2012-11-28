@@ -1,5 +1,5 @@
 (ns eau-de-vie.core
-  (:require [clojure.tools.cli :as c])) 
+  (:require [clojure.tools.cli :as c]))
 
 (load "constants")
 (load "bench")
@@ -8,6 +8,7 @@
 (load "life1")
 (load "life2")
 (load "life3")
+(load "life4")
 
 (defn -main [& args]
   (let [[opts args banner] (c/cli args
