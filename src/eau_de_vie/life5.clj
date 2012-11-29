@@ -11,7 +11,7 @@
     (bench generations step grid size neighbor-map)))
 
 (defn step [cells size neighbor-map]
-  (print-grid (sparse-to-1d cells size) size)
+  (print-grid cells size :parser sparse-to-1d)
   (set (for [[loc n] (frequencies (mapcat #(get neighbor-map %) cells))
              :when (or (= n 3) (and (= n 2) (cells loc)))]
          loc)))

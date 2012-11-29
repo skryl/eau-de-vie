@@ -10,7 +10,7 @@
     (bench generations step grid size)))
 
 (defn step [cells size]
-  (print-grid (sparse-to-1d cells size) size)
+  (print-grid cells size :parser sparse-to-1d) 
   (set (for [[loc n] (frequencies (mapcat #(neighbors % size) cells))
              :when (or (= n 3) (and (= n 2) (cells loc)))]
          loc)))

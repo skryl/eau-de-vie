@@ -6,7 +6,11 @@
 
 ; printing
 ;
-(defn print-grid [grid size] ((:printer gscreen) grid size))
+(defn print-grid [grid size & {:keys [parser]}] 
+  (let [printer (:printer gscreen)] 
+    (if parser 
+      (printer (parser grid size) size)
+      (parser grid size))))
 
 
 ; screen
