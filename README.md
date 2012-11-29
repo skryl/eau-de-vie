@@ -16,23 +16,23 @@ Distilling the game of life to perfection. My first clojure project.
 
     Version 1 - 2d vector, all calculations done on the fly
     - Complexity:  O(n), n = grid size
-    - Benchmark:   45ms / 100 
+    - Benchmark:   45ms / 100 x 100
 
     Version 2 - 1d vector, all calculations done on the fly
     - Complexity:  O(n), n = grid size
-    - Benchmark:   15ms / 100 
+    - Benchmark:   15ms / 100 x 100
 
     Version 3 - 1d vector with precomputed neighbor coordinates
     - Complexity:  O(n), n = grid size
-    - Benchmark:   5ms / 100 
+    - Benchmark:   5ms / 100 x 100
 
     Version 4 - sparse grid, all calculations done on the fly
     - Complexity:  O(n), n = number of live cells
-    - Benchmark:   0 ~ 5ms / 100 
+    - Benchmark:   0 ~ 5ms / 100 x 100
 
-    Version 5 - sparse grid with cached neighbor coordinates (incomplete)
+    Version 5 - sparse grid with precomputed neighbor coordinates
     - Complexity:  O(n), n = number of live cells
-    - Benchmark:   ?
+    - Benchmark:   0 ~ 4ms / 100 x 100
 
     Version 6 - hashlife variation (incomplete)
     - Complexity:  ?

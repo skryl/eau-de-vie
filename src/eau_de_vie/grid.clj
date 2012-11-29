@@ -20,4 +20,4 @@
         grid      (int-array (Math/pow size 2) 0)
         vectorize (fn [[x y]] (+ x (* y size)))]
     (doseq [i (range (count cells))] (aset-int grid (vectorize (nth cells i)) 1))
-  (vec grid)))
+  grid))
