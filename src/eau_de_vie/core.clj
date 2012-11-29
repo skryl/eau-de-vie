@@ -2,8 +2,8 @@
   (:require [clojure.tools.cli :as c]))
 
 (load "constants")
-(load "bench")
 (load "screen")
+(load "bench")
 (load "grid")
 (load "life1")
 (load "life2")

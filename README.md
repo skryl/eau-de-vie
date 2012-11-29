@@ -55,6 +55,6 @@ Run 100 generations of a random 20 x 20 grid using v3 and print to terminal
 
 ## License
 
-Copyright © 2012 FIXME
+Copyright © 2012 Skryl
 
 Distributed under the Eclipse Public License, the same as Clojure.
